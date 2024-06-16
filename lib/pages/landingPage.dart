@@ -74,6 +74,46 @@ class _LandingPageState extends State<LandingPage> {
                     )
                   ],
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Container(
+                  width: 140,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(60, 159, 168, 146),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Row(
+                          children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  './assets/atletico-de-madrid.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.topRight,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(CupertinoIcons.heart),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               )
             ],
           ),

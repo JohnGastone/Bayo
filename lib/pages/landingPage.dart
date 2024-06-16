@@ -14,6 +14,12 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [],
+        ),
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

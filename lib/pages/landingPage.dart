@@ -78,38 +78,68 @@ class _LandingPageState extends State<LandingPage> {
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Container(
-                  width: 140,
-                  height: 200,
+                  width: 200,
+                  height: 275,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(60, 159, 168, 146),
+                    color: Color.fromARGB(59, 101, 104, 96),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.only(left: 8, right: 8, top: 8),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Align(
                               alignment: Alignment.topLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image.asset(
-                                  './assets/atletico-de-madrid.png',
-                                  height: 30,
-                                  width: 30,
-                                ),
+                              child: Image.asset(
+                                './assets/atletico-de-madrid.png',
+                                height: 30,
+                                width: 30,
                               ),
                             ),
                             Align(
                               alignment: Alignment.topRight,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Icon(CupertinoIcons.heart),
+                              child: Icon(
+                                CupertinoIcons.heart,
+                                color: Colors.white,
                               ),
-                            )
+                            ),
                           ],
                         ),
+                      ),
+                      Center(
+                        child: Image.asset(
+                          './assets/at.png',
+                          height: 174,
+                          width: 140,
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "Atletico",
+                            style: GoogleFonts.poppins(
+                                fontSize: 20, color: Colors.white),
+                          ),
+                          Row(
+                            children: [
+                              Text("\$ 200",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 20, color: Colors.white)),
+                              FloatingActionButton(
+                                backgroundColor: Colors.black,
+                                onPressed: () {},
+                                child: Text(
+                                  "Add",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 15, color: Colors.white),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
                       )
                     ],
                   ),

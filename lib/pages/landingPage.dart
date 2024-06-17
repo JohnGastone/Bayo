@@ -54,7 +54,7 @@ class _LandingPageState extends State<LandingPage> {
                     Image.asset(
                       './assets/real-madrid.png',
                       height: 50,
-                      width: 150,
+                      width: 50,
                     ),
                     SizedBox(
                       width: 10,
@@ -62,7 +62,7 @@ class _LandingPageState extends State<LandingPage> {
                     Image.asset(
                       './assets/liverpool.png',
                       height: 50,
-                      width: 150,
+                      width: 50,
                     ),
                     SizedBox(
                       width: 10,
@@ -70,7 +70,7 @@ class _LandingPageState extends State<LandingPage> {
                     Image.asset(
                       './assets/barcelona.png',
                       height: 50,
-                      width: 150,
+                      width: 50,
                     )
                   ],
                 ),
@@ -78,7 +78,7 @@ class _LandingPageState extends State<LandingPage> {
               Padding(
                 padding: EdgeInsets.all(10),
                 child: Container(
-                  width: 200,
+                  width: 160,
                   height: 275,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(59, 101, 104, 96),
@@ -117,27 +117,36 @@ class _LandingPageState extends State<LandingPage> {
                         ),
                       ),
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
                             "Atletico",
                             style: GoogleFonts.poppins(
                                 fontSize: 20, color: Colors.white),
                           ),
-                          Row(
-                            children: [
-                              Text("\$ 200",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white)),
-                              FloatingActionButton(
-                                backgroundColor: Colors.black,
-                                onPressed: () {},
-                                child: Text(
-                                  "Add",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 15, color: Colors.white),
-                                ),
-                              )
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("\$ 200",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 25, color: Colors.white)),
+                                SizedBox(
+                                  height: 30,
+                                  width: 50,
+                                  child: FloatingActionButton(
+                                    backgroundColor: Colors.black,
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Add",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 15, color: Colors.white),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           )
                         ],
                       )

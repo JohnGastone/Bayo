@@ -39,7 +39,7 @@ class _LandingPageState extends State<LandingPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Shop your kits here',
+                'Shop your kits club kit here',
                 style: GoogleFonts.poppins(
                     fontSize: 20, fontWeight: FontWeight.w500),
               ),
@@ -50,7 +50,6 @@ class _LandingPageState extends State<LandingPage> {
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Row(
                   children: [
-                    Icon(CupertinoIcons.sort_down_circle),
                     SizedBox(
                       width: 15,
                     ),
@@ -60,7 +59,7 @@ class _LandingPageState extends State<LandingPage> {
                       width: 45,
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 18,
                     ),
                     Image.asset(
                       './assets/liverpool.png',
@@ -68,7 +67,7 @@ class _LandingPageState extends State<LandingPage> {
                       width: 45,
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 18,
                     ),
                     Image.asset(
                       './assets/barcelona.png',
@@ -76,7 +75,7 @@ class _LandingPageState extends State<LandingPage> {
                       width: 45,
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 18,
                     ),
                     Image.asset(
                       './assets/atletico-de-madrid.png',
@@ -84,7 +83,7 @@ class _LandingPageState extends State<LandingPage> {
                       width: 45,
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 18,
                     ),
                     Image.asset(
                       './assets/bayern-munchen.png',
@@ -209,7 +208,7 @@ class _LandingPageState extends State<LandingPage> {
                                 Align(
                                   alignment: Alignment.topLeft,
                                   child: Image.asset(
-                                    './assets/atletico-de-madrid.png',
+                                    './assets/barcelona.png',
                                     height: 30,
                                     width: 30,
                                   ),
@@ -258,7 +257,7 @@ class _LandingPageState extends State<LandingPage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text("\$ 200",
+                                    Text("\$ 250",
                                         style: GoogleFonts.poppins(
                                             fontSize: 25, color: Colors.white)),
                                     SizedBox(

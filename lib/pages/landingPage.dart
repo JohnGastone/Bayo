@@ -93,6 +93,32 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8, top: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Popular",
+                      style: GoogleFonts.poppins(
+                          fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        width: 100,
+                        height: 15,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20)),
+                        child: LinearProgressIndicator(
+                          backgroundColor: Colors.grey,
+                          value: 0.42, // Value should be between 0.0 and 1.0
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 children: [
                   Padding(

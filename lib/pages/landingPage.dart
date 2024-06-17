@@ -39,7 +39,7 @@ class _LandingPageState extends State<LandingPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Shop your kits club kit here',
+                'Shop your favorite football item here',
                 style: GoogleFonts.poppins(
                     fontSize: 20, fontWeight: FontWeight.w500),
               ),
@@ -195,7 +195,7 @@ class _LandingPageState extends State<LandingPage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text("\$ 200",
+                                    Text("\$ 400",
                                         style: GoogleFonts.poppins(
                                             fontSize: 25, color: Colors.white)),
                                     SizedBox(
@@ -293,7 +293,7 @@ class _LandingPageState extends State<LandingPage> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text("\$ 250",
+                                    Text("\$ 550",
                                         style: GoogleFonts.poppins(
                                             fontSize: 25, color: Colors.white)),
                                     SizedBox(

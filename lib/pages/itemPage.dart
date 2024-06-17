@@ -143,7 +143,7 @@ class _ItempageState extends State<Itempage> {
                             ClipOval(
                               child: Container(
                                 height: 30,
-                                width: 30,
+                                width: 25,
                                 decoration: BoxDecoration(
                                   color: Colors.grey,
                                 ),
@@ -175,6 +175,44 @@ class _ItempageState extends State<Itempage> {
                           ],
                         ),
                       ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: Colors.white),
+                      ),
+                      child: Icon(
+                        CupertinoIcons.cart,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Container(
+                      width: 220,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.blueGrey,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Center(
+                            child: Text(
+                              "BUY NOW",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )),
                     )
                   ],
                 ),

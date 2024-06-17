@@ -348,6 +348,202 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
+              Row(children: [
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Container(
+                    width: 160,
+                    height: 275,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(57, 74, 81, 61),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(120),
+                          topRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, right: 8, top: 8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Image.asset(
+                                  './assets/nike.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Icon(
+                                  CupertinoIcons.heart,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: Image.asset(
+                            './assets/boots.png',
+                            height: 174,
+                            width: 140,
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text.rich(TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: "Atletico ",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                              TextSpan(
+                                text: " | ",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.black),
+                              ),
+                              TextSpan(
+                                text: "2013/14",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.white),
+                              )
+                            ])),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("\$ 200",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 25, color: Colors.white)),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 50,
+                                    child: FloatingActionButton(
+                                      backgroundColor: Colors.black,
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Add",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 15, color: Colors.white),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Container(
+                    width: 160,
+                    height: 275,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(57, 74, 81, 61),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(120),
+                          topRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, right: 8, top: 8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Image.asset(
+                                  './assets/adidas.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Icon(
+                                  CupertinoIcons.heart,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: Image.asset(
+                            './assets/adiball.png',
+                            height: 174,
+                            width: 140,
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text.rich(TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: "Barca",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                              TextSpan(
+                                text: " | ",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.black),
+                              ),
+                              TextSpan(
+                                text: "2023/24",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.white),
+                              )
+                            ])),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("\$ 250",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 25, color: Colors.white)),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 50,
+                                    child: FloatingActionButton(
+                                      backgroundColor: Colors.black,
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Add",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 15, color: Colors.white),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ])
             ],
           ),
         ),

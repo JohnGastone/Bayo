@@ -736,6 +736,192 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                   ),
                 )
+              ]),
+              Row(children: [
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Container(
+                    width: 160,
+                    height: 275,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(57, 74, 81, 61),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(120),
+                          topRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, right: 8, top: 8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Image.asset(
+                                  './assets/puma.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Icon(
+                                  CupertinoIcons.heart,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: Image.asset(
+                            './assets/backpack.png',
+                            height: 174,
+                            width: 140,
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text.rich(TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: "Puma Backpack ",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                              TextSpan(
+                                text: "2019",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 18, color: Colors.black),
+                              )
+                            ])),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("\$ 150",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 25, color: Colors.white)),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 50,
+                                    child: FloatingActionButton(
+                                      backgroundColor: Colors.black,
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Add",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 15, color: Colors.white),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Container(
+                    width: 160,
+                    height: 275,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(57, 74, 81, 61),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(120),
+                          topRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, right: 8, top: 8),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Image.asset(
+                                  './assets/psg.png',
+                                  height: 30,
+                                  width: 30,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Icon(
+                                  CupertinoIcons.heart,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: Image.asset(
+                            './assets/psgcap.png',
+                            height: 174,
+                            width: 140,
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text.rich(TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: "PSG Cap  ",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                              TextSpan(
+                                text: "  2022",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 18, color: Colors.black),
+                              )
+                            ])),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("\$ 80",
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 25, color: Colors.white)),
+                                  SizedBox(
+                                    height: 30,
+                                    width: 50,
+                                    child: FloatingActionButton(
+                                      backgroundColor: Colors.black,
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Add",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 15, color: Colors.white),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ])
             ],
           ),

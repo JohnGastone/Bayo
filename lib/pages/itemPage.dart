@@ -56,7 +56,10 @@ class _ItempageState extends State<Itempage> {
                             height: 80,
                             width: 80,
                             decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 243, 119, 119)),
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(20)),
+                                color: Color.fromARGB(255, 175, 127, 127)),
                             child: Image.asset(
                               './assets/nikelogo.png',
                               height: 40,

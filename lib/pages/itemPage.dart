@@ -140,16 +140,21 @@ class _ItempageState extends State<Itempage> {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w300),
                             ),
-                            CircleAvatar(
-                              radius: 20,
-                              backgroundColor: Colors.grey,
-                              child: Center(
-                                child: Text(
-                                  "L",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300,
-                                      color: Colors.white),
+                            ClipOval(
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "L",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),

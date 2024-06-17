@@ -15,7 +15,9 @@ class _ItempageState extends State<Itempage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(245, 212, 212, 186),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(245, 212, 212, 186),
         automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
@@ -141,12 +143,14 @@ class _ItempageState extends State<Itempage> {
                             CircleAvatar(
                               radius: 20,
                               backgroundColor: Colors.grey,
-                              child: Text(
-                                "L",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w300,
-                                    color: Colors.white),
+                              child: Center(
+                                child: Text(
+                                  "L",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w300,
+                                      color: Colors.white),
+                                ),
                               ),
                             ),
                             Text(

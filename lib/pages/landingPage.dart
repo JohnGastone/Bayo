@@ -16,21 +16,15 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(245, 212, 212, 186),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(245, 212, 212, 186),
         automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Icon(Icons.menu),
-              Image.asset(
-                './assets/nike.png',
-                height: 50,
-                width: 200,
-              ),
-              Icon(CupertinoIcons.cart)
-            ],
+            children: [Icon(Icons.menu), Icon(CupertinoIcons.cart)],
           ),
         ),
       ),

@@ -51,26 +51,45 @@ class _LandingPageState extends State<LandingPage> {
                 child: Row(
                   children: [
                     Icon(CupertinoIcons.sort_down_circle),
+                    SizedBox(
+                      width: 15,
+                    ),
                     Image.asset(
                       './assets/real-madrid.png',
-                      height: 50,
-                      width: 50,
+                      height: 45,
+                      width: 45,
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 15,
                     ),
                     Image.asset(
                       './assets/liverpool.png',
-                      height: 50,
-                      width: 50,
+                      height: 45,
+                      width: 45,
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 15,
                     ),
                     Image.asset(
                       './assets/barcelona.png',
-                      height: 50,
-                      width: 50,
+                      height: 45,
+                      width: 45,
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Image.asset(
+                      './assets/atletico-de-madrid.png',
+                      height: 45,
+                      width: 45,
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Image.asset(
+                      './assets/bayern-munchen.png',
+                      height: 45,
+                      width: 45,
                     )
                   ],
                 ),

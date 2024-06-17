@@ -113,6 +113,8 @@ class _LandingPageState extends State<LandingPage> {
                         child: LinearProgressIndicator(
                           backgroundColor: Colors.grey,
                           value: 0.42, // Value should be between 0.0 and 1.0
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.blueGrey),
                         ),
                       ),
                     ),
@@ -329,9 +331,10 @@ class _LandingPageState extends State<LandingPage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20)),
                         child: LinearProgressIndicator(
-                          backgroundColor: Colors.grey,
-                          value: 0.42, // Value should be between 0.0 and 1.0
-                        ),
+                            backgroundColor: Colors.grey,
+                            value: 0.42, // Value should be between 0.0 and 1.0
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.blueGrey)),
                       ),
                     ),
                   ],

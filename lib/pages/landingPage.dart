@@ -130,7 +130,11 @@ class _LandingPageState extends State<LandingPage> {
                       height: 275,
                       decoration: BoxDecoration(
                         color: Color.fromARGB(57, 74, 81, 61),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(120),
+                            topRight: Radius.circular(15),
+                            bottomLeft: Radius.circular(15),
+                            bottomRight: Radius.circular(15)),
                       ),
                       child: Column(
                         children: [
@@ -224,7 +228,11 @@ class _LandingPageState extends State<LandingPage> {
                       height: 275,
                       decoration: BoxDecoration(
                         color: Color.fromARGB(57, 74, 81, 61),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(120),
+                            topRight: Radius.circular(15),
+                            bottomLeft: Radius.circular(15),
+                            bottomRight: Radius.circular(15)),
                       ),
                       child: Column(
                         children: [

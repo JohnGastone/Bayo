@@ -81,7 +81,7 @@ class _LandingPageState extends State<LandingPage> {
                   width: 160,
                   height: 275,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(59, 101, 104, 96),
+                    color: Color.fromARGB(57, 74, 81, 61),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Column(
@@ -119,11 +119,23 @@ class _LandingPageState extends State<LandingPage> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            "Atletico",
-                            style: GoogleFonts.poppins(
-                                fontSize: 20, color: Colors.white),
-                          ),
+                          Text.rich(TextSpan(children: <TextSpan>[
+                            TextSpan(
+                              text: "Atletico ",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20, color: Colors.white),
+                            ),
+                            TextSpan(
+                              text: " | ",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20, color: Colors.black),
+                            ),
+                            TextSpan(
+                              text: "2013/14",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20, color: Colors.white),
+                            )
+                          ])),
                           Padding(
                             padding: const EdgeInsets.only(left: 10, right: 10),
                             child: Row(

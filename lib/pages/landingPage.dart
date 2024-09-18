@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bayo/model.dart';
 import 'package:bayo/pages/itemPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  List<ClubLogoModel> displayClubLogos =
+      List.from(ClubLogoModelList.displayLogos);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,50 +45,23 @@ class _LandingPageState extends State<LandingPage> {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Image.asset(
-                      './assets/real-madrid.png',
-                      height: 45,
-                      width: 45,
-                    ),
-                    SizedBox(
-                      width: 18,
-                    ),
-                    Image.asset(
-                      './assets/liverpool.png',
-                      height: 45,
-                      width: 45,
-                    ),
-                    SizedBox(
-                      width: 18,
-                    ),
-                    Image.asset(
-                      './assets/barcelona.png',
-                      height: 45,
-                      width: 45,
-                    ),
-                    SizedBox(
-                      width: 18,
-                    ),
-                    Image.asset(
-                      './assets/atletico-de-madrid.png',
-                      height: 45,
-                      width: 45,
-                    ),
-                    SizedBox(
-                      width: 18,
-                    ),
-                    Image.asset(
-                      './assets/bayern-munchen.png',
-                      height: 45,
-                      width: 45,
-                    )
-                  ],
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: SizedBox(
+                  height: 60,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: displayClubLogos.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 18),
+                        child: SizedBox(
+                          height: displayClubLogos[index].height,
+                          width: displayClubLogos[index].width,
+                          child: displayClubLogos[index].logoPath,
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
               Padding(

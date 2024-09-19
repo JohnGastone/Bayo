@@ -216,6 +216,42 @@ List<Product> demoProducts = [
     isFavourite: true,
     isPopular: true,
   ),
+  Product(
+    id: 5,
+    images: [
+      "https://i.postimg.cc/85dMZvhp/psgj.png",
+    ],
+    colors: [
+      const Color(0xFFF6625E),
+      const Color(0xFF836DB8),
+      const Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "PSG Home Kit 2022/23 Season",
+    price: 36.55,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    isPopular: true,
+  ),
+  Product(
+    id: 6,
+    images: [
+      "https://i.postimg.cc/FHqyzNr4/inter.png",
+    ],
+    colors: [
+      const Color(0xFFF6625E),
+      const Color(0xFF836DB8),
+      const Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Atletico Home Kit 2020/21 Season",
+    price: 36.55,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    isPopular: true,
+  ),
 ];
 
 const String description =

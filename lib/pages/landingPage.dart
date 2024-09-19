@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/model.dart';
+import 'package:bayo/pages/favoriteItems.dart';
 import 'package:bayo/pages/itemPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,24 @@ class _LandingPageState extends State<LandingPage> {
           padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [Icon(Icons.menu), Icon(CupertinoIcons.cart)],
+            children: [
+              InkWell(
+                child: Icon(CupertinoIcons.heart_fill),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => FavoriteItems()));
+                },
+              ),
+              InkWell(
+                child: Icon(CupertinoIcons.cart),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Clubshop()));
+                },
+              )
+            ],
           ),
         ),
       ),

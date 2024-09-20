@@ -2,8 +2,10 @@
 
 import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/model.dart';
+import 'package:bayo/pages/detailsPage.dart';
 import 'package:bayo/pages/favoriteItems.dart';
 import 'package:bayo/pages/itemPage.dart';
+import 'package:bayo/pages/jerseyCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +20,36 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   List<ClubLogoModel> displayClubLogos =
       List.from(ClubLogoModelList.displayLogos);
+  final List<Map<String, dynamic>> jerseys = [
+    {
+      'teamName': 'Atletico',
+      'season': '2013',
+      'logoPath': './assets/atletico-de-madrid.png',
+      'jerseyImagePath': './assets/at.png',
+      'price': 400.0,
+    },
+    {
+      'teamName': 'Barca',
+      'season': '2023',
+      'logoPath': './assets/barcelona.png',
+      'jerseyImagePath': './assets/barca23.png',
+      'price': 550.0,
+    },
+    {
+      'teamName': 'Liverpool',
+      'season': '2019',
+      'logoPath': './assets/lfc.png',
+      'jerseyImagePath': './assets/liv19.png',
+      'price': 600.0,
+    },
+    {
+      'teamName': 'Dortmund',
+      'season': '2020',
+      'logoPath': './assets/bvblogo.png',
+      'jerseyImagePath': './assets/bvb.png',
+      'price': 450.0,
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,9 +88,9 @@ class _LandingPageState extends State<LandingPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Shop your favorite football item here',
+                'Shop your favorite football club item here',
                 style: GoogleFonts.poppins(
-                    fontSize: 20, fontWeight: FontWeight.w500),
+                    fontSize: 18, fontWeight: FontWeight.w500),
               ),
               SizedBox(
                 height: 20,
@@ -111,413 +143,38 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Container(
-                      width: 160,
-                      height: 275,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(57, 74, 81, 61),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(120),
-                            topRight: Radius.circular(15),
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 8, right: 8, top: 8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Image.asset(
-                                    './assets/atletico-de-madrid.png',
-                                    height: 30,
-                                    width: 30,
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Icon(
-                                    CupertinoIcons.heart,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Center(
-                            child: InkWell(
-                              child: Image.asset(
-                                './assets/at.png',
-                                height: 174,
-                                width: 140,
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Itempage()));
-                              },
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text.rich(TextSpan(children: <TextSpan>[
-                                TextSpan(
-                                  text: "Atletico ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                                TextSpan(
-                                  text: " | ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.black),
-                                ),
-                                TextSpan(
-                                  text: "2013/14",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white),
-                                )
-                              ])),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("\$ 400",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 25, color: Colors.white)),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 50,
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.black,
-                                        onPressed: () {},
-                                        child: Text(
-                                          "Add",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 15,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: SizedBox(
+                  height: 320, // Constrained height to fix layout issues
+                  width: double
+                      .infinity, // Set width to infinity or to match parent constraints
+                  child: ListView.builder(
+                    itemCount: jerseys.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      final jersey = jerseys[index];
+                      return JerseyCard(
+                        teamName: jersey['teamName'],
+                        season: jersey['season'],
+                        logoPath: jersey['logoPath'],
+                        jerseyImagePath: jersey['jerseyImagePath'],
+                        price: jersey['price'],
+                        onAdd: () {
+                          // Handle Add to cart action
+                        },
+                        onTap: () {
+                          // Handle navigating to item details page
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductDetailsScreen()),
+                          );
+                        },
+                      );
+                    },
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Container(
-                      width: 160,
-                      height: 275,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(57, 74, 81, 61),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(120),
-                            topRight: Radius.circular(15),
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 8, right: 8, top: 8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Image.asset(
-                                    './assets/barcelona.png',
-                                    height: 30,
-                                    width: 30,
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Icon(
-                                    CupertinoIcons.heart,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Center(
-                            child: Image.asset(
-                              './assets/barca23.png',
-                              height: 174,
-                              width: 140,
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text.rich(TextSpan(children: <TextSpan>[
-                                TextSpan(
-                                  text: "Barca",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                                TextSpan(
-                                  text: " | ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.black),
-                                ),
-                                TextSpan(
-                                  text: "2023/24",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white),
-                                )
-                              ])),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("\$ 550",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 25, color: Colors.white)),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 50,
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.black,
-                                        onPressed: () {},
-                                        child: Text(
-                                          "Add",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 15,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Container(
-                      width: 160,
-                      height: 275,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(57, 74, 81, 61),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(120),
-                            topRight: Radius.circular(15),
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 8, right: 8, top: 8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Image.asset(
-                                    './assets/liverpool.png',
-                                    height: 30,
-                                    width: 30,
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Icon(
-                                    CupertinoIcons.heart,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Center(
-                            child: Image.asset(
-                              './assets/liv19.png',
-                              height: 174,
-                              width: 140,
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text.rich(TextSpan(children: <TextSpan>[
-                                TextSpan(
-                                  text: "Liverpool",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                                TextSpan(
-                                  text: " | ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.black),
-                                ),
-                                TextSpan(
-                                  text: "2019/20",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.white),
-                                )
-                              ])),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("\$ 600",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 25, color: Colors.white)),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 50,
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.black,
-                                        onPressed: () {},
-                                        child: Text(
-                                          "Add",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 15,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Container(
-                      width: 165,
-                      height: 275,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(57, 74, 81, 61),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(120),
-                            topRight: Radius.circular(15),
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 8, right: 8, top: 8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Image.asset(
-                                    './assets/bvblogo.png',
-                                    height: 30,
-                                    width: 30,
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Icon(
-                                    CupertinoIcons.heart,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Center(
-                            child: Image.asset(
-                              './assets/bvb.png',
-                              height: 174,
-                              width: 140,
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text.rich(TextSpan(children: <TextSpan>[
-                                TextSpan(
-                                  text: "Dortmund",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 19, color: Colors.white),
-                                ),
-                                TextSpan(
-                                  text: " | ",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 20, color: Colors.black),
-                                ),
-                                TextSpan(
-                                  text: "2020/21",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 19, color: Colors.white),
-                                )
-                              ])),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("\$ 450",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 25, color: Colors.white)),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 50,
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.black,
-                                        onPressed: () {},
-                                        child: Text(
-                                          "Add",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 15,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, top: 15),

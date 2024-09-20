@@ -1,7 +1,7 @@
-// ignore_for_file: use_super_parameters
-
+// ignore_for_file: use_super_parameters, prefer_const_constructors
+import 'package:bayo/pages/detailsPage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// TODO: add flutter_svg dependency in pubspec.yaml
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -65,13 +65,21 @@ class ProductCard extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 1.02,
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF979797).withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(12),
+              child: InkWell(
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF979797).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Image.network(product.images[0]),
                 ),
-                child: Image.network(product.images[0]),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ProductDetailsScreen()));
+                },
               ),
             ),
             const SizedBox(height: 8),

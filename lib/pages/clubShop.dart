@@ -288,26 +288,26 @@ class SpecialOffers extends StatelessWidget {
           child: Row(
             children: [
               SpecialOfferCard(
-                image: "https://i.postimg.cc/yY2bNrmd/Image-Banner-2.png",
-                category: "Smartphone",
+                image: "https://i.postimg.cc/rpg0RKPd/collectibles-1.jpg",
+                category: "Collectibles",
                 numOfBrands: 18,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "https://i.postimg.cc/BQjz4G1k/Image-Banner-3.png",
-                category: "Fashion",
+                image: "https://i.postimg.cc/qRRts4P1/golfgear-1.jpg",
+                category: "Golf Pack",
                 numOfBrands: 24,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "https://i.postimg.cc/yY2bNrmd/Image-Banner-2.png",
-                category: "Smartphone",
+                image: "https://i.postimg.cc/HsQL7rJp/sportsacc.jpg",
+                category: "Sports Accessories",
                 numOfBrands: 18,
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "https://i.postimg.cc/BQjz4G1k/Image-Banner-3.png",
-                category: "Fashion",
+                image: "https://i.postimg.cc/NjCLQW9T/speaker-1.jpg",
+                category: "Music Accessories",
                 numOfBrands: 24,
                 press: () {},
               ),
@@ -380,7 +380,7 @@ class SpecialOfferCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
+                        TextSpan(text: "$numOfBrands Variaties")
                       ],
                     ),
                   ),
@@ -582,22 +582,6 @@ class Product {
 List<Product> demoProducts = [
   Product(
     id: 1,
-    images: ["https://i.postimg.cc/gjpYzXXT/bvb.png"],
-    colors: [
-      const Color(0xFFF6625E),
-      const Color(0xFF836DB8),
-      const Color(0xFFDECB9C),
-      Colors.white,
-    ],
-    title: "Dortmund Home Kit 2020/21 Season",
-    price: 64.99,
-    description: description,
-    rating: 4.8,
-    isFavourite: true,
-    isPopular: true,
-  ),
-  Product(
-    id: 2,
     images: [
       "https://i.postimg.cc/9MZmHtM9/liv19.png",
     ],
@@ -614,9 +598,25 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
+    id: 2,
+    images: ["https://i.postimg.cc/1zcFsWSZ/jute-removebg-preview.png"],
+    colors: [
+      const Color(0xFFF6625E),
+      const Color(0xFF836DB8),
+      const Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "Jute bags",
+    price: 64.99,
+    description: description,
+    rating: 4.8,
+    isFavourite: true,
+    isPopular: true,
+  ),
+  Product(
     id: 3,
     images: [
-      "https://i.postimg.cc/x8VdXp7g/barca23.png",
+      "https://i.postimg.cc/fbhdGG6K/backpack-removebg-preview.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -624,7 +624,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Barcelona Home Kit 2023/24 Season",
+    title: "Tech Back Pack",
     price: 36.55,
     description: description,
     rating: 4.1,
@@ -634,7 +634,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "https://i.postimg.cc/fLcNrz2j/at.png",
+      "https://i.postimg.cc/6pZR1W1q/earphones-removebg-preview.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -642,7 +642,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Atletico Home Kit 2013/14 Season",
+    title: "Wireless Earphones",
     price: 36.55,
     description: description,
     rating: 4.1,

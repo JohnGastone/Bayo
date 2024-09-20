@@ -105,10 +105,18 @@ class _LandingPageState extends State<LandingPage> {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 18),
-                        child: SizedBox(
-                          height: displayClubLogos[index].height,
-                          width: displayClubLogos[index].width,
-                          child: displayClubLogos[index].logoPath,
+                        child: InkWell(
+                          child: SizedBox(
+                            height: displayClubLogos[index].height,
+                            width: displayClubLogos[index].width,
+                            child: displayClubLogos[index].logoPath,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => Clubshop()));
+                          },
                         ),
                       );
                     },

@@ -7,11 +7,12 @@ class SplashContent extends StatefulWidget {
     super.key,
     this.text,
     this.image,
+    this.title,
     this.textStyle,
   });
-  final String? text, image;
 
-  final dynamic textStyle;
+  final String? text, image, title;
+  final TextStyle? textStyle; // Use TextStyle here instead of dynamic
 
   @override
   State<SplashContent> createState() => _SplashContentState();
@@ -23,9 +24,9 @@ class _SplashContentState extends State<SplashContent> {
     return Column(
       children: <Widget>[
         const Spacer(),
-        const Text(
-          "BAYO",
-          style: TextStyle(
+        Text(
+          widget.title ?? "BAYO",
+          style: const TextStyle(
             fontSize: 32,
             color: kPrimaryColor,
             fontWeight: FontWeight.bold,
@@ -34,6 +35,9 @@ class _SplashContentState extends State<SplashContent> {
         Text(
           widget.text!,
           textAlign: TextAlign.center,
+          style: widget.textStyle ??
+              const TextStyle(
+                  fontSize: 16, color: Colors.black), // Apply textStyle here
         ),
         const Spacer(flex: 2),
         Image.asset(

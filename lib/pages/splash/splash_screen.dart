@@ -20,13 +20,19 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
-    {"text": "Welcome to Bayo, Let’s shop!", "image": "assets/splash_1.png"},
     {
+      "title": "BAYO",
+      "text": "Welcome to Bayo, Let’s shop!",
+      "image": "assets/splash_1.png"
+    },
+    {
+      "title": "CLUB STORE",
       "text":
-          "We help people connect with their club's \nstore and shop with ease.",
+          "We help people connect with your club's \nstore and shop with ease.",
       "image": "assets/splash_2.png"
     },
     {
+      "title": "SHOP WITH EASE",
       "text": "We show the easy way to shop. \nJust stay at home with us",
       "image": "assets/splash_3.png"
     },
@@ -51,7 +57,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   itemBuilder: (context, index) => SplashContent(
                     image: splashData[index]["image"],
                     text: splashData[index]['text'],
-                    textStyle: GoogleFonts.poppins(),
+                    title: splashData[index]['title'],
+                    textStyle: GoogleFonts.poppins(fontSize: 16),
                   ),
                 ),
               ),

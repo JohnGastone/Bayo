@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import '../../components/socal_card.dart';
-import '../../constants.dart';
 import 'components/sign_up_form.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -23,10 +22,13 @@ class SignUpScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  const Text("Register Account", style: headingStyle),
-                  const Text(
+                  Text("Register Account",
+                      style: GoogleFonts.poppins(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text(
                     "Complete your details or continue \nwith social media",
                     textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(),
                   ),
                   const SizedBox(height: 16),
                   const SignUpForm(),
@@ -52,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
                   Text(
                     'By continuing your confirm that you agree \nwith our Term and Condition',
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: GoogleFonts.poppins(),
                   )
                 ],
               ),

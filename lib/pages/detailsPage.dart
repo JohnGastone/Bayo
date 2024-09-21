@@ -77,14 +77,14 @@ class ProductDetailsScreen extends StatelessWidget {
                   product: product,
                   pressOnSeeMore: () {},
                 ),
-                TopRoundedContainer(
-                  color: const Color(0xFFF6F7F9),
-                  child: Column(
-                    children: [
-                      ColorDots(product: product),
-                    ],
-                  ),
+                Column(
+                  children: [
+                    ColorDots(product: product),
+                  ],
                 ),
+                SizedBox(
+                  height: 10,
+                )
               ],
             ),
           ),

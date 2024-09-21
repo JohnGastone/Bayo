@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'components/complete_profile_form.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
@@ -11,7 +10,10 @@ class CompleteProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign Up'),
+        title: Text(
+          'Sign Up',
+          style: GoogleFonts.poppins(),
+        ),
       ),
       body: SafeArea(
         child: SizedBox(
@@ -22,10 +24,13 @@ class CompleteProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  const Text("Complete Profile", style: headingStyle),
-                  const Text(
+                  Text("Complete Profile",
+                      style: GoogleFonts.poppins(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text(
                     "Complete your details or continue  \nwith social media",
                     textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(),
                   ),
                   const SizedBox(height: 16),
                   const CompleteProfileForm(),
@@ -33,7 +38,7 @@ class CompleteProfileScreen extends StatelessWidget {
                   Text(
                     "By continuing your confirm that you agree \nwith our Term and Condition",
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: GoogleFonts.poppins(),
                   ),
                 ],
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../constants.dart';
 
@@ -105,9 +106,19 @@ class _OtpFormState extends State<OtpForm> {
             ],
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.15),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Continue"),
+          SizedBox(
+            width: 200,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor:
+                    WidgetStateProperty.all(const Color(0xFFFF7643)),
+              ),
+              onPressed: () {},
+              child: Text(
+                "Continue",
+                style: GoogleFonts.poppins(color: Colors.white),
+              ),
+            ),
           ),
         ],
       ),

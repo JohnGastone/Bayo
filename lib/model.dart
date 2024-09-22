@@ -110,7 +110,7 @@ class PopularItemsModel {
 }
 
 class PopularItemsModelList {
-  static List<PopularItemsModel> getCategories = [
+  static List<PopularItemsModel> getPopularItems = [
     PopularItemsModel(
       teamName: 'Atletico',
       year: '2019',
@@ -141,6 +141,6 @@ class PopularItemsModelList {
     ),
   ];
 
-  static List<PopularItemsModel> displayCategories =
-      List.from(PopularItemsModelList.getCategories);
+  static List<PopularItemsModel> displayPopularItems =
+      List.from(PopularItemsModelList.getPopularItems);
 }

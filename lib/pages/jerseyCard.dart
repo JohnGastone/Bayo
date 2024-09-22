@@ -1,28 +1,17 @@
-// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api
 
+import 'package:bayo/model.dart'; // Make sure PopularItemsModel is imported
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class JerseyCard extends StatefulWidget {
-  final String teamName;
-  final String season;
-  final String logoPath;
-  final String jerseyImagePath;
-  final double price;
-  final VoidCallback onAdd;
-  final VoidCallback onTap;
+  final PopularItemsModel popularItem; // Pass the model object
+  final Function()? onTap; // Optional onTap callback
+  final Function()? onAdd; // Optional onAdd callback
 
-  const JerseyCard({
-    super.key,
-    required this.teamName,
-    required this.season,
-    required this.logoPath,
-    required this.jerseyImagePath,
-    required this.price,
-    required this.onAdd,
-    required this.onTap,
-  });
+  const JerseyCard(
+      {super.key, required this.popularItem, this.onTap, this.onAdd});
 
   @override
   _JerseyCardState createState() => _JerseyCardState();
@@ -40,11 +29,11 @@ class _JerseyCardState extends State<JerseyCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Container(
         width: 160,
         height: 275,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color.fromARGB(57, 74, 81, 61),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(120),
@@ -56,14 +45,14 @@ class _JerseyCardState extends State<JerseyCard> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 8, right: 8, top: 8),
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
                     child: Image.asset(
-                      widget.logoPath,
+                      widget.popularItem.brandPath ?? '', // Access brand image
                       height: 30,
                       width: 30,
                     ),
@@ -91,7 +80,7 @@ class _JerseyCardState extends State<JerseyCard> {
               child: InkWell(
                 onTap: widget.onTap,
                 child: Image.asset(
-                  widget.jerseyImagePath,
+                  widget.popularItem.imagePath ?? '', // Access jersey image
                   height: 174,
                   width: 140,
                 ),
@@ -104,7 +93,8 @@ class _JerseyCardState extends State<JerseyCard> {
                   TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                        text: "${widget.teamName} ",
+                        text:
+                            "${widget.popularItem.teamName} ", // Access team name
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           color: Colors.white,
@@ -118,7 +108,7 @@ class _JerseyCardState extends State<JerseyCard> {
                         ),
                       ),
                       TextSpan(
-                        text: widget.season,
+                        text: widget.popularItem.year, // Access year
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           color: Colors.white,
@@ -133,7 +123,7 @@ class _JerseyCardState extends State<JerseyCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$ ${widget.price}",
+                        "\$ ${widget.popularItem.price}", // Access price
                         style: GoogleFonts.poppins(
                           fontSize: 25,
                           color: Colors.white,
@@ -144,7 +134,7 @@ class _JerseyCardState extends State<JerseyCard> {
                         width: 50,
                         child: FloatingActionButton(
                           backgroundColor: Colors.black,
-                          onPressed: widget.onAdd,
+                          onPressed: widget.onAdd, // Call the onAdd function
                           child: Text(
                             "Add",
                             style: GoogleFonts.poppins(

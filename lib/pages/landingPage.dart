@@ -20,36 +20,9 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   List<ClubLogoModel> displayClubLogos =
       List.from(ClubLogoModelList.displayLogos);
-  final List<Map<String, dynamic>> jerseys = [
-    {
-      'teamName': 'Atletico',
-      'season': '2013',
-      'logoPath': './assets/atletico-de-madrid.png',
-      'jerseyImagePath': './assets/at.png',
-      'price': 50.0,
-    },
-    {
-      'teamName': 'Barca',
-      'season': '2023',
-      'logoPath': './assets/barcelona.png',
-      'jerseyImagePath': './assets/barca23.png',
-      'price': 55.0,
-    },
-    {
-      'teamName': 'Liverpool',
-      'season': '2019',
-      'logoPath': './assets/lfc.png',
-      'jerseyImagePath': './assets/liv19.png',
-      'price': 60.0,
-    },
-    {
-      'teamName': 'Dortmund',
-      'season': '2020',
-      'logoPath': './assets/bvblogo.png',
-      'jerseyImagePath': './assets/bvb.png',
-      'price': 45.0,
-    },
-  ];
+  List<PopularItemsModel> displayPopularItems =
+      List.from(PopularItemsModelList.displayPopularItems);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,7 +115,7 @@ class _LandingPageState extends State<LandingPage> {
                             borderRadius: BorderRadius.circular(20)),
                         child: LinearProgressIndicator(
                           backgroundColor: Colors.grey,
-                          value: 0.42, // Value should be between 0.0 and 1.0
+                          value: 0.42,
                           valueColor:
                               AlwaysStoppedAnimation<Color>(Colors.blueGrey),
                         ),
@@ -157,26 +130,14 @@ class _LandingPageState extends State<LandingPage> {
                   height: 320,
                   width: double.infinity,
                   child: ListView.builder(
-                    itemCount: jerseys.length,
+                    itemCount: displayPopularItems.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      final jersey = jerseys[index];
+                      final jersey = displayPopularItems[index];
                       return JerseyCard(
-                        teamName: jersey['teamName'],
-                        season: jersey['season'],
-                        logoPath: jersey['logoPath'],
-                        jerseyImagePath: jersey['jerseyImagePath'],
-                        price: jersey['price'],
-                        onAdd: () {
-                          // Handle Add to cart action
-                        },
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProductDetailsScreen()),
-                          );
-                        },
+                        popularItem: jersey,
+                        onTap: () {},
+                        onAdd: () {},
                       );
                     },
                   ),

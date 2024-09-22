@@ -94,14 +94,14 @@ class CategoriesModelList {
 }
 
 class PopularItemsModel {
-  String? name;
+  String? teamName;
   String? year;
   int? price;
   String? imagePath;
   String? brandPath;
 
   PopularItemsModel({
-    this.name,
+    this.teamName,
     this.year,
     this.price,
     this.imagePath,
@@ -112,32 +112,32 @@ class PopularItemsModel {
 class PopularItemsModelList {
   static List<PopularItemsModel> getCategories = [
     PopularItemsModel(
-      name: 'Nike Boots',
+      teamName: 'Atletico',
       year: '2019',
       price: 650,
-      imagePath: './assets/boots.png',
-      brandPath: './assets/nike.png',
+      imagePath: './assets/atletico-de-madrid.png',
+      brandPath: './assets/at.png',
     ),
     PopularItemsModel(
-      name: 'Match Ball',
+      teamName: 'Barca',
       year: '2014',
       price: 300,
-      imagePath: './assets/adiball.png',
-      brandPath: './assets/adidas.png',
+      imagePath: './assets/barcelona.png',
+      brandPath: './assets/barca23.png',
     ),
     PopularItemsModel(
-      name: 'Puma Backpack',
+      teamName: 'Liverpool',
       year: '2019',
       price: 150,
-      imagePath: './assets/backpack.png',
-      brandPath: './assets/puma.png',
+      imagePath: './assets/lfc.png',
+      brandPath: './assets/liv19.png',
     ),
     PopularItemsModel(
-      name: 'PSG Cap',
+      teamName: 'Dortmund',
       year: '2022',
       price: 80,
-      imagePath: './assets/psgcap.png',
-      brandPath: './assets/psg.png',
+      imagePath: './assets/bvblogo.png',
+      brandPath: './assets/bvb.png',
     ),
   ];
 

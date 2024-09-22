@@ -89,28 +89,29 @@ class _JerseyCardState extends State<JerseyCard> {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text.rich(
-                  TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text:
-                            "${widget.popularItem.teamName} ", // Access team name
+                Padding(
+                  padding: const EdgeInsets.only(left: 5, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "${widget.popularItem.teamName} ", // Access team name
                         style: GoogleFonts.poppins(
-                          fontSize: 20,
+                          fontSize: 15,
                           color: Colors.white,
                         ),
                       ),
-                      TextSpan(
-                        text: " | ",
+                      Text(
+                        " | ",
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           color: Colors.black,
                         ),
                       ),
-                      TextSpan(
-                        text: widget.popularItem.year, // Access year
+                      Text(
+                        " ${widget.popularItem.year}", // Access year
                         style: GoogleFonts.poppins(
-                          fontSize: 20,
+                          fontSize: 14,
                           color: Colors.white,
                         ),
                       ),
@@ -118,14 +119,14 @@ class _JerseyCardState extends State<JerseyCard> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  padding: const EdgeInsets.only(left: 5, right: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "\$ ${widget.popularItem.price}", // Access price
                         style: GoogleFonts.poppins(
-                          fontSize: 25,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),

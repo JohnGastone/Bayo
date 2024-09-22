@@ -79,7 +79,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    ColorDots(product: product),
+                    SizeSelector(),
                   ],
                 ),
                 SizedBox(
@@ -321,79 +321,59 @@ class ProductDescription extends StatelessWidget {
   }
 }
 
-class ColorDots extends StatelessWidget {
-  const ColorDots({
-    super.key,
-    required this.product,
-  });
-
-  final Product product;
-
+class SizeSelector extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    // Now this is fixed and only for demo
-    int selectedColor = 3;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        children: [
-          ...List.generate(
-            product.colors.length,
-            (index) => ColorDot(
-              color: product.colors[index],
-              isSelected: index == selectedColor,
-            ),
-          ),
-          const Spacer(),
-          RoundedIconBtn(
-            icon: Icons.remove,
-            press: () {},
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              "1",
-              style: GoogleFonts.poppins(),
-            ),
-          ),
-          RoundedIconBtn(
-            icon: Icons.add,
-            showShadow: true,
-            press: () {},
-          ),
-        ],
-      ),
-    );
-  }
+  _SizeSelectorState createState() => _SizeSelectorState();
 }
 
-class ColorDot extends StatelessWidget {
-  const ColorDot({
-    super.key,
-    required this.color,
-    this.isSelected = false,
-  });
+class _SizeSelectorState extends State<SizeSelector> {
+  // Available sizes
+  final List<String> sizes = ["S", "M", "L", "XL", "XXL"];
 
-  final Color color;
-  final bool isSelected;
+  // Initially selected size
+  String selectedSize = "L";
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 2),
-      padding: const EdgeInsets.all(8),
+      width: 220,
       height: 40,
-      width: 40,
       decoration: BoxDecoration(
-        color: const Color(0xFF979797).withOpacity(0.1),
-        border: Border.all(
-            color: isSelected ? const Color(0xFFFF7643) : Colors.transparent),
-        shape: BoxShape.circle,
+        color: Colors.blueGrey,
+        borderRadius: BorderRadius.circular(25),
       ),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: sizes.map((size) {
+            bool isSelected = size == selectedSize;
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedSize = size;
+                });
+              },
+              child: Container(
+                height: 30,
+                width: 25,
+                decoration: BoxDecoration(
+                  color: isSelected ? Colors.grey : Colors.transparent,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    size,
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w300,
+                      color: isSelected ? Colors.white : Colors.white24,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
         ),
       ),
     );
@@ -480,7 +460,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Wireless Controller for PS4™",
+    title: "Liverpool home kit 2019/20 title winning campaign",
     price: 64.99,
     description: description,
     rating: 4.8,
@@ -543,7 +523,7 @@ List<Product> demoProducts = [
 ];
 
 const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
+    "A title winning kit full of memorable occassions from that 3-1 win over Man city, that Salah strike versus United and many more  …";
 
 const starIcon =
     '''<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">

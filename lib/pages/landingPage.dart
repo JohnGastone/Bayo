@@ -4,7 +4,6 @@ import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/model.dart';
 import 'package:bayo/pages/detailsPage.dart';
 import 'package:bayo/pages/favoriteItems.dart';
-import 'package:bayo/pages/itemPage.dart';
 import 'package:bayo/pages/jerseyCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,28 +25,28 @@ class _LandingPageState extends State<LandingPage> {
       'season': '2013',
       'logoPath': './assets/atletico-de-madrid.png',
       'jerseyImagePath': './assets/at.png',
-      'price': 400.0,
+      'price': 50.0,
     },
     {
       'teamName': 'Barca',
       'season': '2023',
       'logoPath': './assets/barcelona.png',
       'jerseyImagePath': './assets/barca23.png',
-      'price': 550.0,
+      'price': 55.0,
     },
     {
       'teamName': 'Liverpool',
       'season': '2019',
       'logoPath': './assets/lfc.png',
       'jerseyImagePath': './assets/liv19.png',
-      'price': 600.0,
+      'price': 60.0,
     },
     {
       'teamName': 'Dortmund',
       'season': '2020',
       'logoPath': './assets/bvblogo.png',
       'jerseyImagePath': './assets/bvb.png',
-      'price': 450.0,
+      'price': 45.0,
     },
   ];
   @override

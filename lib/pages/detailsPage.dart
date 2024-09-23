@@ -78,7 +78,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   pressOnSeeMore: () {},
                 ),
                 Column(
-                  children: [
+                  children: const [
                     SizeSelector(),
                   ],
                 ),

@@ -2,6 +2,7 @@
 import 'package:bayo/pages/category/categoriesCard.dart';
 import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/model.dart';
+import 'package:bayo/pages/detailsPage.dart';
 import 'package:bayo/pages/jerseyCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -110,7 +111,12 @@ class _LandingPageState extends State<LandingPage> {
                   final jersey = displayPopularItems[index];
                   return JerseyCard(
                     popularItem: jersey,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (context) => ProductDetailsScreen()));
+                    },
                     onAdd: () {},
                   );
                 },

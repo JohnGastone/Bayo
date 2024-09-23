@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     {
       "title": "CLUB STORE",
       "text":
-          "We help people connect with your club's \nstore and shop with ease.",
+          "We help you connect with your club's \nstore and shop with ease.",
       "image": "assets/splash_2.png"
     },
     {

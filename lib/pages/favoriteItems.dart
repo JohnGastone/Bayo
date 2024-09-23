@@ -13,8 +13,9 @@ class FavoriteItems extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(245, 212, 212, 186),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
-          "Favorite",
+          "Favorite Stuff",
           style: GoogleFonts.poppins(),
         ),
         backgroundColor: const Color.fromARGB(245, 212, 212, 186),
@@ -70,7 +71,12 @@ class ProductCard extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: const Color(0xFF979797).withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(90),
+                      topRight: Radius.circular(15),
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15),
+                    ),
                   ),
                   child: Image.network(product.images[0]),
                 ),

@@ -47,7 +47,7 @@ class HomeHeader extends StatelessWidget {
           const Expanded(child: SearchField()),
           const SizedBox(width: 16),
           IconBtnWithCounter(
-            // numOfitem: 3,
+            numOfitem: 3,
             svgSrc: cartIcon,
             press: () {
               Navigator.push(context,
@@ -57,7 +57,7 @@ class HomeHeader extends StatelessWidget {
           const SizedBox(width: 8),
           IconBtnWithCounter(
             svgSrc: bellIcon,
-            numOfitem: 3,
+            // numOfitem: 3,
             press: () {},
           ),
         ],
@@ -502,7 +502,12 @@ class ProductCard extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: const Color(0xFF979797).withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(90),
+                    topRight: Radius.circular(15),
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  ),
                 ),
                 child: Image.network(product.images[0]),
               ),

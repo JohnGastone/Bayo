@@ -17,6 +17,7 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(245, 212, 212, 186),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color.fromARGB(245, 212, 212, 186),
         title: Column(
           children: [

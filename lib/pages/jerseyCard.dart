@@ -61,16 +61,12 @@ class _JerseyCardState extends State<JerseyCard> {
                   Align(
                     alignment: Alignment.topRight,
                     child: GestureDetector(
-                      onTap: toggleFavorite, // Toggle heart on tap
+                      onTap: toggleFavorite,
                       child: Icon(
                         isFavorite
-                            ? CupertinoIcons
-                                .heart_fill // Filled heart when favorite
-                            : CupertinoIcons
-                                .heart, // Default heart when not favorite
-                        color: isFavorite
-                            ? kPrimaryColor
-                            : Colors.white, // Red if favorite, white if not
+                            ? CupertinoIcons.heart_fill
+                            : CupertinoIcons.heart,
+                        color: isFavorite ? kPrimaryColor : Colors.white,
                       ),
                     ),
                   ),
@@ -81,7 +77,7 @@ class _JerseyCardState extends State<JerseyCard> {
               child: InkWell(
                 onTap: widget.onTap,
                 child: Image.asset(
-                  widget.popularItem.imagePath ?? '', // Access jersey image
+                  widget.popularItem.imagePath ?? '',
                   height: 174,
                   width: 140,
                 ),
@@ -96,7 +92,7 @@ class _JerseyCardState extends State<JerseyCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "${widget.popularItem.teamName} ", // Access team name
+                        "${widget.popularItem.teamName} ",
                         style: GoogleFonts.poppins(
                           fontSize: 15,
                           color: Colors.white,
@@ -110,7 +106,7 @@ class _JerseyCardState extends State<JerseyCard> {
                         ),
                       ),
                       Text(
-                        " ${widget.popularItem.year}", // Access year
+                        " ${widget.popularItem.year}",
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: Colors.white,
@@ -125,7 +121,7 @@ class _JerseyCardState extends State<JerseyCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$ ${widget.popularItem.price}", // Access price
+                        "\$ ${widget.popularItem.price}",
                         style: GoogleFonts.poppins(
                           fontSize: 16,
                           color: Colors.white,
@@ -136,7 +132,7 @@ class _JerseyCardState extends State<JerseyCard> {
                         width: 50,
                         child: FloatingActionButton(
                           backgroundColor: Colors.black,
-                          onPressed: widget.onAdd, // Call the onAdd function
+                          onPressed: widget.onAdd,
                           child: Text(
                             "Add",
                             style: GoogleFonts.poppins(

@@ -1,8 +1,9 @@
+// ignore_for_file: library_private_types_in_public_api, non_constant_identifier_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../complete_profile/complete_profile_screen.dart';
@@ -84,8 +85,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon:
-                    const CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+                suffixIcon: SvgPicture.asset("assets/icons/Mail.svg"),
               )),
           const SizedBox(height: 20),
           TextFormField(
@@ -128,8 +128,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon:
-                    const CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
+                suffixIcon: SvgPicture.asset("assets/icons/Lock.svg"),
               )),
           const SizedBox(height: 20),
           TextFormField(
@@ -172,8 +171,7 @@ class _SignUpFormState extends State<SignUpForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon:
-                    const CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
+                suffixIcon: SvgPicture.asset("assets/icons/Lock.svg"),
               )),
           FormError(errors: errors),
           const SizedBox(height: 20),
@@ -187,7 +185,6 @@ class _SignUpFormState extends State<SignUpForm> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  // if all are valid then go to success screen
                   Navigator.push(
                       context,
                       CupertinoPageRoute(

@@ -1,6 +1,6 @@
+import 'package:bayo/pages/initScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bayo/pages/landingPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
@@ -45,7 +45,7 @@ class LoginSuccessScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     CupertinoPageRoute(
-                        builder: (context) => const LandingPage()));
+                        builder: (context) => const InitScreen()));
               },
               child: Text(
                 "Continue",

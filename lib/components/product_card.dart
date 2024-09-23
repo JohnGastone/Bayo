@@ -6,12 +6,12 @@ import '../models/Product.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    Key? key,
+    super.key,
     this.width = 140,
     this.aspectRetio = 1.02,
     required this.product,
     required this.onPress,
-  }) : super(key: key);
+  });
 
   final double width, aspectRetio;
   final Product product;

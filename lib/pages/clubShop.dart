@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bayo/pages/cartPage.dart';
+import 'package:bayo/pages/detailsPage.dart';
+import 'package:bayo/pages/landingPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -58,7 +60,10 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: bellIcon,
             // numOfitem: 3,
-            press: () {},
+            press: () {
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (context) => LandingPage()));
+            },
           ),
         ],
       ),
@@ -492,7 +497,10 @@ class ProductCard extends StatelessWidget {
     return SizedBox(
       width: width,
       child: GestureDetector(
-        onTap: onPress,
+        onTap: () {
+          Navigator.push(context,
+              CupertinoPageRoute(builder: (context) => ProductDetailsScreen()));
+        },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

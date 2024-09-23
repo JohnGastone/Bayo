@@ -1,3 +1,5 @@
+import 'package:bayo/pages/sign_in/sign_in_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -5,8 +7,8 @@ import '../../../constants.dart';
 
 class OtpForm extends StatefulWidget {
   const OtpForm({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _OtpFormState createState() => _OtpFormState();
@@ -113,7 +115,10 @@ class _OtpFormState extends State<OtpForm> {
                 backgroundColor:
                     WidgetStateProperty.all(const Color(0xFFFF7643)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    CupertinoPageRoute(builder: (context) => SignInScreen()));
+              },
               child: Text(
                 "Continue",
                 style: GoogleFonts.poppins(color: Colors.white),

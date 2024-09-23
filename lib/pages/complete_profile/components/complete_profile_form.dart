@@ -195,8 +195,10 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
               ),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  Navigator.push(context,
-                      CupertinoPageRoute(builder: (context) => OtpScreen()));
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => const OtpScreen()));
                 }
               },
               child: Text(

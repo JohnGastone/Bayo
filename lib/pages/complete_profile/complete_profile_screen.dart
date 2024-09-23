@@ -36,7 +36,7 @@ class CompleteProfileScreen extends StatelessWidget {
                   const CompleteProfileForm(),
                   const SizedBox(height: 30),
                   Text(
-                    "By continuing your confirm that you agree \nwith our Term and Condition",
+                    "By continuing your confirm that you agree \nwith our Terms and Conditions",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(),
                   ),

@@ -322,6 +322,8 @@ class ProductDescription extends StatelessWidget {
 }
 
 class SizeSelector extends StatefulWidget {
+  const SizeSelector({super.key});
+
   @override
   _SizeSelectorState createState() => _SizeSelectorState();
 }

@@ -1,15 +1,35 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: library_private_types_in_public_api
 
+import 'package:bayo/constants.dart';
 import 'package:bayo/model.dart'; // Ensure your CategoriesModel is correctly imported
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Categoriescard extends StatelessWidget {
-  Categoriescard({super.key});
+class CategoriesCard extends StatefulWidget {
+  const CategoriesCard({super.key});
 
+  @override
+  _CategoriesCardState createState() => _CategoriesCardState();
+}
+
+class _CategoriesCardState extends State<CategoriesCard> {
   List<CategoriesModel> displayCategories =
       List.from(CategoriesModelList.displayCategories);
+  List<bool> isFavoriteList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize isFavoriteList to match the number of categories, defaulting to false
+    isFavoriteList = List<bool>.filled(displayCategories.length, false);
+  }
+
+  void toggleFavorite(int index) {
+    setState(() {
+      isFavoriteList[index] = !isFavoriteList[index];
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +49,7 @@ class Categoriescard extends StatelessWidget {
             ),
             itemCount: displayCategories.length,
             itemBuilder: (context, index) {
-              return buildCategoryCard(displayCategories[index]);
+              return buildCategoryCard(displayCategories[index], index);
             },
           ),
         ),
@@ -37,7 +57,7 @@ class Categoriescard extends StatelessWidget {
     );
   }
 
-  Widget buildCategoryCard(CategoriesModel product) {
+  Widget buildCategoryCard(CategoriesModel product, int index) {
     return Container(
       width: 160,
       height: 290,
@@ -65,11 +85,20 @@ class Categoriescard extends StatelessWidget {
                     width: 30,
                   ),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.topRight,
-                  child: Icon(
-                    CupertinoIcons.heart,
-                    color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () => toggleFavorite(index), // Toggle heart on tap
+                    child: Icon(
+                      isFavoriteList[index]
+                          ? CupertinoIcons
+                              .heart_fill // Filled heart when favorite
+                          : CupertinoIcons
+                              .heart, // Default heart when not favorite
+                      color: isFavoriteList[index]
+                          ? kPrimaryColor
+                          : Colors.white, // Red if favorite, white if not
+                    ),
                   ),
                 ),
               ],
@@ -127,7 +156,9 @@ class Categoriescard extends StatelessWidget {
                         width: 50,
                         child: FloatingActionButton(
                           backgroundColor: Colors.black,
-                          onPressed: () {},
+                          onPressed: () {
+                            // Action when 'Add' is pressed
+                          },
                           child: Text(
                             "Add",
                             style: GoogleFonts.poppins(

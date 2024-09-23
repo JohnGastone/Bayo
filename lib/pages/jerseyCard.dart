@@ -1,14 +1,15 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:bayo/constants.dart';
 import 'package:bayo/model.dart'; // Make sure PopularItemsModel is imported
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class JerseyCard extends StatefulWidget {
-  final PopularItemsModel popularItem; // Pass the model object
-  final Function()? onTap; // Optional onTap callback
-  final Function()? onAdd; // Optional onAdd callback
+  final PopularItemsModel popularItem;
+  final Function()? onTap;
+  final Function()? onAdd;
 
   const JerseyCard(
       {super.key, required this.popularItem, this.onTap, this.onAdd});
@@ -68,7 +69,7 @@ class _JerseyCardState extends State<JerseyCard> {
                             : CupertinoIcons
                                 .heart, // Default heart when not favorite
                         color: isFavorite
-                            ? Colors.red
+                            ? kPrimaryColor
                             : Colors.white, // Red if favorite, white if not
                       ),
                     ),

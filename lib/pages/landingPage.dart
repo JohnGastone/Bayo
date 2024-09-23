@@ -3,7 +3,6 @@
 import 'package:bayo/pages/category/categoriesCard.dart';
 import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/model.dart';
-import 'package:bayo/pages/detailsPage.dart';
 import 'package:bayo/pages/favoriteItems.dart';
 import 'package:bayo/pages/jerseyCard.dart';
 import 'package:flutter/cupertino.dart';
@@ -171,7 +170,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
               SizedBox(
-                  height: 400, width: double.infinity, child: Categoriescard())
+                  height: 400, width: double.infinity, child: CategoriesCard())
             ],
           ),
         ),

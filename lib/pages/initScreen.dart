@@ -1,3 +1,6 @@
+// ignore_for_file: file_names
+
+import 'package:bayo/components/svg_pack.dart';
 import 'package:bayo/constants.dart';
 import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/pages/favoriteItems.dart';
@@ -44,15 +47,15 @@ class _InitScreenState extends State<InitScreen> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              "assets/icons/Shop Icon.svg",
+            icon: SvgPicture.string(
+              shop_icon,
               colorFilter: const ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
-            activeIcon: SvgPicture.asset(
-              "assets/icons/Shop Icon.svg",
+            activeIcon: SvgPicture.string(
+              shop_icon,
               colorFilter: const ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
@@ -61,15 +64,15 @@ class _InitScreenState extends State<InitScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              "assets/icons/Heart Icon.svg",
+            icon: SvgPicture.string(
+              heart_icon,
               colorFilter: const ColorFilter.mode(
-                Color.fromARGB(255, 255, 255, 255),
+                inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
-            activeIcon: SvgPicture.asset(
-              "assets/icons/Heart Icon.svg",
+            activeIcon: SvgPicture.string(
+              heart_icon,
               colorFilter: const ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
@@ -78,15 +81,15 @@ class _InitScreenState extends State<InitScreen> {
             label: "Fav",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              "assets/icons/Chat bubble Icon.svg",
+            icon: SvgPicture.string(
+              chat_bubble_icon,
               colorFilter: const ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
-            activeIcon: SvgPicture.asset(
-              "assets/icons/Chat bubble Icon.svg",
+            activeIcon: SvgPicture.string(
+              chat_bubble_icon,
               colorFilter: const ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,
@@ -95,15 +98,15 @@ class _InitScreenState extends State<InitScreen> {
             label: "Club Shop",
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              "assets/icons/User Icon.svg",
+            icon: SvgPicture.string(
+              user_icon,
               colorFilter: const ColorFilter.mode(
                 inActiveIconColor,
                 BlendMode.srcIn,
               ),
             ),
-            activeIcon: SvgPicture.asset(
-              "assets/icons/User Icon.svg",
+            activeIcon: SvgPicture.string(
+              user_icon,
               colorFilter: const ColorFilter.mode(
                 kPrimaryColor,
                 BlendMode.srcIn,

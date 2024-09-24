@@ -74,7 +74,7 @@ class CategoriesModelList {
       brandPath: './assets/adidas.png',
     ),
     CategoriesModel(
-      name: 'Puma Backpack',
+      name: 'Puma Bag',
       year: '2019',
       price: 150,
       imagePath: './assets/backpack.png',

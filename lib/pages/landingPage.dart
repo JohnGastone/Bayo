@@ -77,9 +77,9 @@ class _LandingPageState extends State<LandingPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Popular",
+                  "Popular Products",
                   style: GoogleFonts.poppins(
-                      fontSize: 30, fontWeight: FontWeight.bold),
+                      fontSize: 25, fontWeight: FontWeight.w500),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
@@ -131,7 +131,7 @@ class _LandingPageState extends State<LandingPage> {
                 Text(
                   "Categories",
                   style: GoogleFonts.poppins(
-                      fontSize: 30, fontWeight: FontWeight.bold),
+                      fontSize: 25, fontWeight: FontWeight.w500),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
@@ -151,7 +151,7 @@ class _LandingPageState extends State<LandingPage> {
             ),
           ),
           SizedBox(
-              height: 400, width: double.infinity, child: CategoriesCard()),
+              height: 320, width: double.infinity, child: CategoriesCard()),
         ])),
       ),
     );

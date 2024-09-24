@@ -1,11 +1,12 @@
-// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  ProductDetailsScreen({super.key});
+  bool showFullDescription = false;
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +172,6 @@ class _ProductImagesState extends State<ProductImages> {
             child: Image.network(widget.product.images[selectedImage]),
           ),
         ),
-        // SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -299,20 +299,23 @@ class ProductDescription extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () {},
-            child: Row(
-              children: [
-                Text(
-                  "See More Detail",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600, color: Color(0xFFFF7643)),
-                ),
-                SizedBox(width: 5),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: Color(0xFFFF7643),
-                ),
-              ],
+            child: InkWell(
+              child: Row(
+                children: [
+                  Text(
+                    "See More Detail",
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600, color: Color(0xFFFF7643)),
+                  ),
+                  SizedBox(width: 5),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 12,
+                    color: Color(0xFFFF7643),
+                  ),
+                ],
+              ),
+              onTap: () {},
             ),
           ),
         )
@@ -367,7 +370,7 @@ class _SizeSelectorState extends State<SizeSelector> {
                   child: Text(
                     size,
                     style: GoogleFonts.poppins(
-                      fontSize: 18,
+                      fontSize: 15,
                       fontWeight: FontWeight.w300,
                       color: isSelected ? Colors.white : Colors.white24,
                     ),
@@ -525,7 +528,7 @@ List<Product> demoProducts = [
 ];
 
 const String description =
-    "A title winning kit full of memorable occassions from that 3-1 win over Man city, that Salah strike versus United and many more  …";
+    "A title winning kit full of memorable occassions from that 3-1 win over Man city, that Salah strike versus United, Mane header that won the game at Villa park in the minutes of death..";
 
 const starIcon =
     '''<svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">

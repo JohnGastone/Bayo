@@ -116,8 +116,10 @@ class _OtpFormState extends State<OtpForm> {
                     WidgetStateProperty.all(const Color(0xFFFF7643)),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => SignInScreen()));
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (context) => const SignInScreen()));
               },
               child: Text(
                 "Continue",

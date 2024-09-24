@@ -21,7 +21,6 @@ class _CategoriesCardState extends State<CategoriesCard> {
   @override
   void initState() {
     super.initState();
-    // Initialize isFavoriteList to match the number of categories, defaulting to false
     isFavoriteList = List<bool>.filled(displayCategories.length, false);
   }
 
@@ -40,13 +39,8 @@ class _CategoriesCardState extends State<CategoriesCard> {
         child: SizedBox(
           height: 320,
           width: double.infinity,
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.6,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
             itemCount: displayCategories.length,
             itemBuilder: (context, index) {
               return buildCategoryCard(displayCategories[index], index);
@@ -58,123 +52,122 @@ class _CategoriesCardState extends State<CategoriesCard> {
   }
 
   Widget buildCategoryCard(CategoriesModel product, int index) {
-    return Container(
-      width: 160,
-      height: 290,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(57, 74, 81, 61),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(120),
-          topRight: Radius.circular(15),
-          bottomLeft: Radius.circular(15),
-          bottomRight: Radius.circular(15),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: 160,
+        height: 290,
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(57, 74, 81, 61),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(120),
+            topRight: Radius.circular(15),
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Image.asset(
-                    product.brandPath ?? '',
-                    height: 30,
-                    width: 30,
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: GestureDetector(
-                    onTap: () => toggleFavorite(index), // Toggle heart on tap
-                    child: Icon(
-                      isFavoriteList[index]
-                          ? CupertinoIcons
-                              .heart_fill // Filled heart when favorite
-                          : CupertinoIcons
-                              .heart, // Default heart when not favorite
-                      color: isFavoriteList[index]
-                          ? kPrimaryColor
-                          : Colors.white, // Red if favorite, white if not
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Image.asset(
+                      product.brandPath ?? '',
+                      height: 30,
+                      width: 30,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Center(
-            child: Image.asset(
-              product.imagePath ?? '',
-              height: 174,
-              width: 140,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 5),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "${product.name} ",
-                        style: GoogleFonts.poppins(
-                          fontSize: 15,
-                          color: Colors.white,
-                        ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: GestureDetector(
+                      onTap: () => toggleFavorite(index),
+                      child: Icon(
+                        isFavoriteList[index]
+                            ? CupertinoIcons.heart_fill
+                            : CupertinoIcons.heart,
+                        color: isFavoriteList[index]
+                            ? kPrimaryColor
+                            : Colors.white,
                       ),
-                      Text(
-                        product.year ?? '',
-                        style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "\$ ${product.price}",
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          color: Colors.white,
+                ],
+              ),
+            ),
+            Center(
+              child: Image.asset(
+                product.imagePath ?? '',
+                height: 174,
+                width: 140,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "${product.name} ",
+                          style: GoogleFonts.poppins(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                        width: 50,
-                        child: FloatingActionButton(
-                          backgroundColor: Colors.black,
-                          onPressed: () {
-                            // Action when 'Add' is pressed
-                          },
-                          child: Text(
-                            "Add",
-                            style: GoogleFonts.poppins(
-                              fontSize: 15,
-                              color: Colors.white,
+                        Text(
+                          product.year ?? '',
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "\$ ${product.price}",
+                          style: GoogleFonts.poppins(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                          width: 50,
+                          child: FloatingActionButton(
+                            backgroundColor: Colors.black,
+                            onPressed: () {},
+                            child: Text(
+                              "Add",
+                              style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

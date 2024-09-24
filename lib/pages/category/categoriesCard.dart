@@ -149,6 +149,7 @@ class _CategoriesCardState extends State<CategoriesCard> {
                           height: 30,
                           width: 50,
                           child: FloatingActionButton(
+                            heroTag: "fab_add_cateory",
                             backgroundColor: Colors.black,
                             onPressed: () {},
                             child: Text(

@@ -12,10 +12,6 @@ class LoginSuccessScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const SizedBox(),
-        title: Text(
-          "Login Success",
-          style: GoogleFonts.poppins(),
-        ),
       ),
       body: Column(
         children: [

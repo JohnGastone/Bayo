@@ -86,11 +86,11 @@ class _SignFormState extends State<SignForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon: SvgPicture.string(
-                  mail,
-                  height: 10,
-                  width: 10,
-                ),
+                // suffixIcon: SvgPicture.string(
+                //   mail,
+                //   height: 10,
+                //   width: 10,
+                // ),
               )),
           const SizedBox(height: 20),
           TextFormField(
@@ -133,11 +133,11 @@ class _SignFormState extends State<SignForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon: SvgPicture.string(
-                  lock,
-                  height: 3,
-                  width: 3,
-                ),
+                // suffixIcon: SvgPicture.asset(
+                //   lock,
+                //   height: 3,
+                //   width: 3,
+                // ),
               )),
           const SizedBox(height: 20),
           Row(

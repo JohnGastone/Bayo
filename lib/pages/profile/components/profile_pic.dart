@@ -1,3 +1,4 @@
+import 'package:bayo/components/svg_pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,7 +17,9 @@ class ProfilePic extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           const CircleAvatar(
-            backgroundImage: AssetImage("assets/images/Profile Image.png"),
+            backgroundImage: AssetImage(
+              "assets/oya.jpeg",
+            ),
           ),
           Positioned(
             right: -16,
@@ -34,7 +37,7 @@ class ProfilePic extends StatelessWidget {
                   backgroundColor: const Color(0xFFF5F6F9),
                 ),
                 onPressed: () {},
-                child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
+                child: SvgPicture.asset(camera_icon),
               ),
             ),
           )

@@ -131,6 +131,7 @@ class _JerseyCardState extends State<JerseyCard> {
                         height: 30,
                         width: 50,
                         child: FloatingActionButton(
+                          heroTag: "fab_add_jersey_card",
                           backgroundColor: Colors.black,
                           onPressed: widget.onAdd,
                           child: Text(

@@ -1,9 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
+import 'package:bayo/components/svg_pack.dart';
 import 'package:bayo/pages/login_success/login_success_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../../helper/keyboard.dart';
@@ -85,8 +86,11 @@ class _SignFormState extends State<SignForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon:
-                    const CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+                suffixIcon: SvgPicture.string(
+                  mail,
+                  height: 10,
+                  width: 10,
+                ),
               )),
           const SizedBox(height: 20),
           TextFormField(
@@ -129,8 +133,11 @@ class _SignFormState extends State<SignForm> {
                   borderSide: const BorderSide(color: kPrimaryColor),
                   gapPadding: 10,
                 ),
-                suffixIcon:
-                    const CustomSurffixIcon(svgIcon: "assets/icons/lock.svg"),
+                suffixIcon: SvgPicture.string(
+                  lock,
+                  height: 3,
+                  width: 3,
+                ),
               )),
           const SizedBox(height: 20),
           Row(

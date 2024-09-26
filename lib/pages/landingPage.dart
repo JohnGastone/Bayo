@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:bayo/components/home_header.dart';
 import 'package:bayo/pages/category/categoriesCard.dart';
 import 'package:bayo/pages/clubShop.dart';
 import 'package:bayo/model.dart';

@@ -1,7 +1,6 @@
 import 'package:bayo/components/svg_pack.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
 
@@ -29,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ProfileMenu(
               text: "My Account",
-              icon: user_icon,
+              icon: "./assets/icons/User Icon.png",
               press: () => {},
             ),
             ProfileMenu(

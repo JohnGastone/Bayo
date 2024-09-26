@@ -1,9 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bayo/components/home_header.dart';
 import 'package:bayo/components/svg_pack.dart';
-import 'package:bayo/pages/cartPage.dart';
 import 'package:bayo/pages/detailsPage.dart';
-import 'package:bayo/pages/landingPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,14 +18,16 @@ class Clubshop extends StatefulWidget {
 class _ClubshopState extends State<Clubshop> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Color.fromARGB(245, 212, 212, 186),
+          automaticallyImplyLeading: false,
+          title: HomeHeader()),
       backgroundColor: Color.fromARGB(245, 212, 212, 186),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(vertical: 16),
           child: Column(
             children: [
-              HomeHeader(),
               DiscountBanner(),
               Categories(),
               SpecialOffers(),
@@ -36,43 +37,6 @@ class _ClubshopState extends State<Clubshop> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class HomeHeader extends StatelessWidget {
-  const HomeHeader({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Expanded(child: SearchField()),
-          const SizedBox(width: 16),
-          IconBtnWithCounter(
-            numOfitem: 3,
-            svgSrc: cart_icon,
-            press: () {
-              Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => CartScreen()));
-            },
-          ),
-          const SizedBox(width: 8),
-          IconBtnWithCounter(
-            svgSrc: bell,
-            // numOfitem: 3,
-            press: () {
-              Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => LandingPage()));
-            },
-          ),
-        ],
       ),
     );
   }

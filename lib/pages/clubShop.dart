@@ -2,7 +2,11 @@
 
 import 'package:bayo/components/home_header.dart';
 import 'package:bayo/components/svg_pack.dart';
+import 'package:bayo/pages/music_accessoires/music_accessories.dart';
+import 'package:bayo/pages/sport_accessories/sports_accessories.dart';
+import 'package:bayo/pages/collectables/collectables_page.dart';
 import 'package:bayo/pages/detailsPage.dart';
+import 'package:bayo/pages/golf_pack/golf_pack.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -267,25 +271,43 @@ class SpecialOffers extends StatelessWidget {
                 image: "https://i.postimg.cc/rpg0RKPd/collectibles-1.jpg",
                 category: "Collectibles",
                 numOfBrands: 18,
-                press: () {},
+                press: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => CollectablesPage()));
+                },
               ),
               SpecialOfferCard(
                 image: "https://i.postimg.cc/qRRts4P1/golfgear-1.jpg",
                 category: "Golf Pack",
                 numOfBrands: 24,
-                press: () {},
+                press: () {
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => GolfPackPage()));
+                },
               ),
               SpecialOfferCard(
                 image: "https://i.postimg.cc/HsQL7rJp/sportsacc.jpg",
                 category: "Sports Accessories",
                 numOfBrands: 18,
-                press: () {},
+                press: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => SportsAccessoriesPage()));
+                },
               ),
               SpecialOfferCard(
                 image: "https://i.postimg.cc/NjCLQW9T/speaker-1.jpg",
                 category: "Music Accessories",
                 numOfBrands: 24,
-                press: () {},
+                press: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => MusicAccessoriesPage()));
+                },
               ),
               const SizedBox(width: 20),
             ],

@@ -1,7 +1,6 @@
 import 'package:bayo/components/svg_pack.dart';
 import 'package:bayo/pages/cartPage.dart';
 import 'package:bayo/pages/clubShop.dart';
-import 'package:bayo/pages/landingPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -589,7 +589,7 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "https://i.postimg.cc/9MZmHtM9/liv19.png",
+      "https://iili.io/dpVclOx.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -605,7 +605,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 2,
-    images: ["https://i.postimg.cc/1zcFsWSZ/jute-removebg-preview.png"],
+    images: ["https://iili.io/dpWeuMF.png"],
     colors: [
       const Color(0xFFF6625E),
       const Color(0xFF836DB8),
@@ -622,7 +622,7 @@ List<Product> demoProducts = [
   Product(
     id: 3,
     images: [
-      "https://i.postimg.cc/fbhdGG6K/backpack-removebg-preview.png",
+      "https://iili.io/dpWeTn1.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -640,7 +640,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "https://i.postimg.cc/6pZR1W1q/earphones-removebg-preview.png",
+      "https://iili.io/dpWeCyQ.png",
     ],
     colors: [
       const Color(0xFFF6625E),

@@ -163,7 +163,7 @@ class Product {
 List<Product> demoProducts = [
   Product(
     id: 1,
-    images: ["https://i.postimg.cc/gjpYzXXT/bvb.png"],
+    images: ["https://iili.io/dpWOA74.png"],
     colors: [
       const Color(0xFFF6625E),
       const Color(0xFF836DB8),
@@ -180,7 +180,7 @@ List<Product> demoProducts = [
   Product(
     id: 2,
     images: [
-      "https://i.postimg.cc/9MZmHtM9/liv19.png",
+      "https://iili.io/dpVclOx.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -197,7 +197,7 @@ List<Product> demoProducts = [
   Product(
     id: 3,
     images: [
-      "https://i.postimg.cc/x8VdXp7g/barca23.png",
+      "https://iili.io/dpWOz1s.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -215,7 +215,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "https://i.postimg.cc/fLcNrz2j/at.png",
+      "https://iili.io/dpWORkl.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -233,7 +233,7 @@ List<Product> demoProducts = [
   Product(
     id: 5,
     images: [
-      "https://i.postimg.cc/85dMZvhp/psgj.png",
+      "https://iili.io/dpWO5p2.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -251,7 +251,7 @@ List<Product> demoProducts = [
   Product(
     id: 6,
     images: [
-      "https://i.postimg.cc/FHqyzNr4/inter.png",
+      "https://iili.io/dpWUpyb.png",
     ],
     colors: [
       const Color(0xFFF6625E),

@@ -455,9 +455,9 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "https://i.postimg.cc/9MZmHtM9/liv19.png",
-      "https://i.postimg.cc/HW6RhV0z/liv19back-removebg-preview.png",
-      "https://i.postimg.cc/zX36Z80r/liv19hanged-removebg-preview.png",
+      "https://iili.io/dpVclOx.png",
+      "https://iili.io/dpVhVTX.png",
+      "https://iili.io/dpVhWjn.png",
     ],
     colors: [
       const Color(0xFFF6625E),

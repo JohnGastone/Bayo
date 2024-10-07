@@ -32,13 +32,18 @@ class ProfileScreen extends StatelessWidget {
               press: () => {},
             ),
             ProfileMenu(
-              text: "Notifications",
-              icon: bell,
-              press: () {},
+              text: "My Club",
+              icon: "./assets/icons/User Icon.png",
+              press: () => {},
             ),
             ProfileMenu(
-              text: "Settings",
-              icon: settings,
+              text: "My Products",
+              icon: "./assets/icons/User Icon.png",
+              press: () => {},
+            ),
+            ProfileMenu(
+              text: "Notifications",
+              icon: bell,
               press: () {},
             ),
             ProfileMenu(

@@ -1,6 +1,6 @@
-import 'package:bayo/components/svg_pack.dart';
+import 'package:bayo/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
@@ -37,7 +37,10 @@ class ProfilePic extends StatelessWidget {
                   backgroundColor: const Color(0xFFF5F6F9),
                 ),
                 onPressed: () {},
-                child: SvgPicture.asset(camera_icon),
+                child: const Icon(
+                  CupertinoIcons.add,
+                  color: kPrimaryColor,
+                ),
               ),
             ),
           )

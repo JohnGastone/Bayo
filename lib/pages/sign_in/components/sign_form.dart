@@ -1,9 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
-import 'package:bayo/components/svg_pack.dart';
 import 'package:bayo/pages/login_success/login_success_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
